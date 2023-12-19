@@ -2,7 +2,8 @@
 
 ## Section 2
 
-> [!IMPORTANT] > **Exercise:** Take note of the name assigned to your container.
+> [!IMPORTANT]
+> **Exercise:** Take note of the name assigned to your container.
 
 The name of the container is `hardcore_grothendieck`.
 

@@ -11,7 +11,8 @@ For this section I setup a cluster with a `control-plane-1` node and two workers
 
 ## Section 3
 
-> [!IMPORTANT] > **Question:** This command has to be executed from a node of the cluster to work. Why?
+> [!IMPORTANT]
+> **Question:** This command has to be executed from a node of the cluster to work. Why?
 > **My answer:** ClusterIP services can only be accessed from within the cluster.
 
 To access the deployed service form outside the cluster after having a NodePort service, I have to get the IP of one of the nodes and use the port that I allocated.
@@ -81,7 +82,8 @@ roleRef:
 
 ## Section 7
 
-> [!IMPORTANT] > **Exercise:** Let’s have a look to the services we just created:
+> [!IMPORTANT]
+> **Exercise:** Let’s have a look to the services we just created:
 > How can we access to the front-end service?
 > Why does the “frontend-external” service remain with a “Pending” external IP?
 > **My answers:** The front-end service is of type ClusterIP, meaning that it can only be accessed from within the cluster. To do so, we can run `curl 10.255.76.155` from one of the nodes in the cluster, such as control-plane. The "frontend-external" service is of type LoadBalancer, meaning that it exposes the Service externally using a cloud provider’s load balancer. In this case, there is no cloud provider set up, so the service cannot use it.
@@ -94,7 +96,8 @@ The frontent can be accessed from the cluster nodes.
 
 ![curl](images/5.png)
 
-> [!IMPORTANT] > **Exercise:** Exercise: Let’s inspect the frontend service of the application we just deployed:
+> [!IMPORTANT]
+> **Exercise:** Exercise: Let’s inspect the frontend service of the application we just deployed:
 > Can we access it directly? If yes, how?
 > Let’s create an Ingress with the following values. What parts of the infrastructure are missing to properly use it?
 > **My answers:** The frontend can be accessed directly from nodes within the cluster as done in previous lab sections. The infrastructure is missing a dns configuration to map www.example.local to the ingress ip.

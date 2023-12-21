@@ -47,4 +47,6 @@ The two containers can communicate with each other using ping. They can also pin
 
 ![pings](images/5.png)
 
-Continue from section 2.4
+In section 2.5.7 we can observe that killing the nginx master process causes the workers' parent to become `sleep`, meaning that without zombie reaping they stay on the table even after being terminated.
+
+![zombies](images/6.png)

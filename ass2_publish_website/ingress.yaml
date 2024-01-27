@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: website-ingress
+spec:
+  tls:
+  - hosts:
+      - s321399.sandbox.crownlabs.polito.it
+    secretName: crownlabs-sandbox-secret
+  rules:
+  - host: s321399.sandbox.crownlabs.polito.it
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: website-service
+            port:
+              number: 80

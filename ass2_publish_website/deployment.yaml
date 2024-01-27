@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: website-deployment
+spec:
+  selector:
+    matchLabels:
+      app: website
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: website
+    spec:
+      containers:
+      - name: kubernetes-assignment
+        image: class1cj/kubernetes-assignment:v1
+        ports:
+        - containerPort: 80
